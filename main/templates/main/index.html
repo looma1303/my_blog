@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+{% load static %}
+{% load main_tag %}
+<html lang="ko" dir="ltr">
+  <head>
+
+    <meta charset="utf-8">
+    <title>@rlaalswo__</title>
+    <link rel="stylesheet" href="{% static 'master.css' %}?after">
+  </head>
+  <body>
+
+    <header>
+      <h1 class = "intro">내 블로그</h1>
+      <a class = 'promotion' href="https://www.instagram.com/rlaalwo__/">instagram</a>
+
+    </header>
+
+    <br/>
+    <div class="menu">
+      <b>Menu</b>
+      <br>
+
+    </div>
+    <form class="cmd_bar" action="{% url 'createform' %}" method="POST">
+      {% csrf_token %}
+      <div>
+          <br/>
+          <input class = "cmd" type="text" name="cmd" id="cmd" placeholder="사용법: /?">
+
+
+      </div>
+
+
+    </form>
+    {% if message == 'need_write_page' %}
+      <a target="_self" href="/write">WRITE</a>
+    {% else %}
+      <b>{{message}}</b>
+
+    {% endif %}
+
+    <br>
+    {% preview_write as write %}
+
+    {% for x in write %}
+    <a href="{% url 'viewer' write_id=x.id %}">
+      <div class="previewer">
+          <p class = 'preview_title'>{{ x.title|truncatechars:9}}</p>
+          <p class = 'preview_things'>{{ x.things|truncatechars:10}}</p>
+          {% preview_photo x.id as photo %}
+          {% if photo != 'NO_IMG' %}
+            <p class = 'preview_images'><img src="{{photo.image.url}}" width="175" height="250"></p>
+
+          {% endif %}
+
+      </div>
+    </a>
+    {% endfor %}
+
+
+
+
+
+<!--TODO templatestag에서 처리하거나 왜 작동안되는지 찾아내거나-->
+
+
+
+
+    <br>
+
+
+<!-- TODO: 글 표시하는 앱 만들기 -->
+
+
+
+  </body>
+</html>

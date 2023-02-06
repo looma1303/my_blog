@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>글쓰기</title>
+    <link rel="stylesheet" href="{% static 'master.css' %}?after">
+
+  </head>
+  <body>
+    <h1>글 쓰는곳</h1>
+
+    <form class="write_form" action="{% url 'write_form' %}" method="POST" enctype="multipart/form-data">
+      {% csrf_token %}
+      <div>
+        <b class = "write_title">제목</b>
+        <br/>
+        <input class = "intro" type="text" name="intro" id="intro" placeholder="제목">
+        <br/>
+        <b class = "write_detail">내용</b>
+        <br/>
+        <textarea class = "detail "name="detail" placeholder="내용" rows="8" cols="80" style = "width: 400px; height: 100px; ;word-break:break-all; overflow:auto;"></textarea>
+        <br/>
+        <b class = "write_pics">사진</b>
+        <br/>
+        <input type="file" name="images" multiple id = "images">
+        <br/>
+        <input class="btn btn-primary" type="submit" value="글 작성">
+
+
+      </div>
+
+
+    </form>
+   <!-- TODO: 지금까지 쓴 글 보여주는 기능 넣기 -->
+
+  </body>
+</html>

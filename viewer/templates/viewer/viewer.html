@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+{% load static %}
+{% load viewer_tag %}
+
+
+
+
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="{% static 'master.css' %}?after">
+    <title></title>
+  </head>
+  <body>
+    <h1></h1>
+
+    {% write write_id as loaded_target_write %}
+    <h1>{% title_giver write_id %}</h1>
+    {% for x in loaded_target_write %}
+      {% if x == "@img" %}
+        {% photo write_id as target_photo %}
+        <img src="{{target_photo.image.url}}" width="450" height="600">
+        <br>
+      {% else %}
+        <p>{{x}}</p>
+      {% endif %}
+    {% endfor %}
+
+
+
+<!--TODO:viewer에서 사진을 글 중간에 맘대로 넣을수 있는 기능 추가하기.-->
+
+
+  </body>
+</html>
