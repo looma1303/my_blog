@@ -32,12 +32,10 @@ def createform(request):
                 if user.cmd == x:
                     cmd_state = "FOUND"
                     command = x
-                    #print('command:',x)
                 else:
                     pass
             if cmd_state == "FOUND":
                 message = run_command(command)
-                #print(message,type(x))
             else:
                 message = "명령어를 찾을 수 없습니다."
         else:

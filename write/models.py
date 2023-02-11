@@ -18,9 +18,6 @@ class Write(models.Model):
     pub_date = models.DateTimeField(null=False, auto_now_add=True)
     title = models.TextField(null = True)
     things = models.TextField(null = True)
-    #now = dt.datetime.now()
-    #pics = models.ImageField(upload_to='images/', blank = True, null = True)
-    #user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
 
 
     def __str__(self):
@@ -31,5 +28,4 @@ class Write(models.Model):
 class Photo(models.Model):
     write_id = models.IntegerField(null=False)
     pub_date = models.DateTimeField(null=False, auto_now_add=True)
-    #post = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
     image = models.ImageField(upload_to='images/', blank=True, null=True)
