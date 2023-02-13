@@ -62,6 +62,8 @@ input {
 
 .preview_things {
 
+
+
   border-radius: 10px 10px 10px 10px/ 10px 10px 10px 10px;
 }
 
@@ -97,7 +99,9 @@ input {
   height: 20px;
 }
 
-
+.viewer_things {
+  width: 20px;
+}
 
 @keyframes post-ani {
     25% {

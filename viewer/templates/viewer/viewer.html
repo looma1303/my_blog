@@ -16,7 +16,10 @@
 
     {% write write_id as loaded_target_write %}
     <h1>{% title_giver write_id %}</h1>
-    {% for x in loaded_target_write %}
+    <div class="viewer_things">
+      {% for x in loaded_target_write %}
+    </div>
+
       {% if x == "@img" %}
         {% photo write_id as target_photo %}
         <img src="{{target_photo.image.url}}" width="450" height="600">
