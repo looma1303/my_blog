@@ -28,22 +28,17 @@ input {
 
 
 
-
-
-
 .previewer:hover {
   transform: scale(1.4);
 }
 .previewer {
   transition: all 0.2s linear;
   border-radius: 20px 20px 20px 20px/ 20px 20px 20px 20px;
-  text-align: center;
   vertical-align: center;
   margin: 20px;
   border: 2px solid #354649;
-  display:inline-block;
-  float: left;
   overflow: hidden;
+  float:left;
 
 
 }
@@ -76,9 +71,6 @@ input {
   margin-top: 30px;
 }
 
-.intro {
-
-}
 
 .detail {
   width: 50px;
@@ -100,7 +92,17 @@ input {
 }
 
 .viewer_things {
-  width: 20px;
+  width: 50%;
+  border: black, 3px;
+  margin: auto;
+
+}
+
+.warp {
+  height: 500px;
+}
+footer {
+  opacity: 0.5;
 }
 
 @keyframes post-ani {

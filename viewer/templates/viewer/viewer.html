@@ -12,13 +12,15 @@
     <title></title>
   </head>
   <body>
-    <h1></h1>
+
 
     {% write write_id as loaded_target_write %}
     <h1>{% title_giver write_id %}</h1>
+
+    
     <div class="viewer_things">
       {% for x in loaded_target_write %}
-    </div>
+    
 
       {% if x == "@img" %}
         {% photo write_id as target_photo %}
@@ -28,7 +30,7 @@
         <p>{{x}}</p>
       {% endif %}
     {% endfor %}
-
+    </div>
 
 
   </body>
